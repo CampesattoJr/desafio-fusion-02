@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { FaStar, FaSearch } from "react-icons/fa";
+import { FaHeart, FaSearch } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
+import { Footer } from '../Footer';
 
 export function Home() {
     const [query, setQuery] = useState('');
@@ -134,13 +135,15 @@ export function Home() {
                         >
                             {
                                 isFavorite(selectedPhoto) ?
-                                    <div className='text-yellow-500 text-3xl'><FaStar /></div> :
-                                    <div className='text-white text-3xl'><FaStar /></div>
+                                    <div className='text-red-500 text-3xl duration-500'><FaHeart /></div> :
+                                    <div className='text-white text-3xl duration-500'><FaHeart /></div>
                             }
                         </button>
                     </div>
                 </div>
             )}
+
+            <Footer />
         </div>
     );
 }
